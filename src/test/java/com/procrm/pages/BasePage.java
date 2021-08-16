@@ -34,10 +34,6 @@ public abstract class BasePage {
     @FindBy(xpath = "//span[contains(text(),'My Profile')]")
     public WebElement myProfile;
 
-
-
-
-
     public BasePage() {
         PageFactory.initElements(Driver.get(), this);
     }
