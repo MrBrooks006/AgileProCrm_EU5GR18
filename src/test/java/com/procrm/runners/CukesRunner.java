@@ -11,8 +11,8 @@ import org.junit.runner.RunWith;
                 "rerun:target/rerun.txt"},
         features = "src/test/resources/features",
         glue = "com/procrm/step_definitions",
-        dryRun = true,
-        tags = "@drive"
+        dryRun = false,
+        tags = "@AGIL-236"
 )
 public class CukesRunner {
 }
