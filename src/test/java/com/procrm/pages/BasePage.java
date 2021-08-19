@@ -90,8 +90,8 @@ public abstract class BasePage {
      * For example: if tab is equals to Activities, and module equals to Calls,
      * Then method will navigate user to this page: http://qa2.vytrack.com/call/
      *
-     * @param tab
-     * @param module
+     * @param
+     * @param
      */
     public void navigateToSideMenu(String tab) {
         String tabLocator = "//span[contains(text(),'"+tab+"')][@data-role='item-text']";
@@ -99,7 +99,7 @@ public abstract class BasePage {
         try {
             BrowserUtils.waitForClickablility(By.xpath(tabLocator), 5);
             WebElement tabElement = Driver.get().findElement(By.xpath(tabLocator));
-            new Actions(Driver.get()).moveToElement(tabElement).pause(200).doubleClick(tabElement).build().perform();
+            new Actions(Driver.get()).moveToElement(tabElement).pause(200).click(tabElement).build().perform();
         } catch (Exception e) {
             BrowserUtils.clickWithWait(By.xpath(tabLocator), 5);
         }
@@ -112,7 +112,7 @@ public abstract class BasePage {
         try {
             BrowserUtils.waitForClickablility(By.xpath(topMenuLocator), 5);
             WebElement tabElement = Driver.get().findElement(By.xpath(topMenuLocator));
-            new Actions(Driver.get()).moveToElement(tabElement).pause(200).doubleClick(tabElement).build().perform();
+            new Actions(Driver.get()).moveToElement(tabElement).pause(200).click(tabElement).build().perform();
         } catch (Exception e) {
             BrowserUtils.clickWithWait(By.xpath(topMenuLocator), 5);
         }
