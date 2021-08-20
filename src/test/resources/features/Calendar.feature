@@ -8,9 +8,9 @@ Feature:
     #1.User should be able to display My Calendar by clicking "My Calendar" tab
     #2.User should be able to display Company Calendar by clicking "Company Calendar" tab.
   @AGIL-244
-  Scenario Outline: As a user, I should be able to use Calendar function on Activity Stream
-Feature: Calendar functionality
 
+Feature: Calendar functionality
+  Scenario Outline: As a user, I should be able to use Calendar function on Activity Stream
 
 Given the user logged in as "<userType>"
 When the user navigates to "Calendar" menu

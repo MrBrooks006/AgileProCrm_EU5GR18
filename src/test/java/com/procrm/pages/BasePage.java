@@ -16,7 +16,6 @@ import java.util.List;
 
 public abstract class BasePage {
 
-
     @FindBy(css = "div[class='loader-mask shown']")
     @CacheLookup
     protected WebElement loaderMask;
