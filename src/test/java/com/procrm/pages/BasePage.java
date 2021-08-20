@@ -16,6 +16,17 @@ import java.util.List;
 
 public abstract class BasePage {
 
+
+    @FindBy(css = "div[class='loader-mask shown']")
+    @CacheLookup
+    protected WebElement loaderMask;
+
+    @FindBy(xpath = "//span[contains(text(),'Configure notifications')]")
+    public WebElement configNot;
+
+    @FindBy(xpath = "//span[contains(text(),'Edit Profile Settings')]")
+    public WebElement editProfileSet;
+
     @FindBy(id = "sitemap-menu")
     public List<WebElement> menu;
 
@@ -39,13 +50,13 @@ public abstract class BasePage {
     }
 
 
+
     /**
      * @return page name, for example: Dashboard
      */
-    /*public String getPageSubTitle() {
+    public String getPageSubTitle() {
         //ant time we are verifying page name, or page subtitle, loader mask appears
-        waitUntilLoaderScreenDisappear();
-//        BrowserUtils.waitForStaleElement(pageSubTitle);
+        BrowserUtils.waitForVisibility(pageSubTitle,3);
         return pageSubTitle.getText();
     }
 
@@ -55,35 +66,47 @@ public abstract class BasePage {
      * NoSuchElementException will be handled  bu try/catch block
      * Thus, we can continue in any case.
      */
-    /*public void waitUntilLoaderScreenDisappear() {
+    public void waitUntilLoaderScreenDisappear() {
         try {
             WebDriverWait wait = new WebDriverWait(Driver.get(), 5);
-            wait.until(ExpectedConditions.invisibilityOf(loaderMask));
+            BrowserUtils.waitFor(1);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
     }
 
+
+    public void goToConfigureNot(){
+        BrowserUtils.waitFor(2);
+        BrowserUtils.clickWithJS(userName);
+        BrowserUtils.clickWithJS(configNot);
+
+
+    }
     public String getUserName(){
-        waitUntilLoaderScreenDisappear();
+
         BrowserUtils.waitForVisibility(userName, 5);
         return userName.getText();
     }
 
-
+    public void goToProfileSettings(){
+        BrowserUtils.waitFor(2);
+        BrowserUtils.clickWithJS(userName);
+        BrowserUtils.clickWithJS(editProfileSet);
+    }
 
     public void logOut(){
         BrowserUtils.waitFor(2);
         BrowserUtils.clickWithJS(userName);
         BrowserUtils.clickWithJS(logOutLink);
     }
-    public void goToMyUser(){
-        waitUntilLoaderScreenDisappear();
-        BrowserUtils.waitForClickablility(userName, 5).click();
-        BrowserUtils.waitForClickablility(myUser, 5).click();
+    public void goToMyProfile(){
 
-    }*/
+        BrowserUtils.waitForClickablility(userName, 5).click();
+        BrowserUtils.waitForClickablility(myProfile, 5).click();
+
+    }
 
     /**
      * This method will navigate user to the specific module in vytrack application.
