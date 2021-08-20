@@ -129,6 +129,12 @@ public abstract class BasePage {
 
     }
 
+    public void navigateToTab(String tab){
+
+        String tabLocator = "//a[@title='"+ tab +"']//span[@data-role='item-text']";
+        Driver.get().findElement(By.xpath(tabLocator)).click();
+    }
+
     public void navigateToTopMenu(String topMenu) {
         String topMenuLocator = "//div[@id='feed-add-post-form-tab']/span[@id='feed-add-post-form-tab-"+topMenu+"']";
 

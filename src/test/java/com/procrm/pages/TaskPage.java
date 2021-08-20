@@ -10,12 +10,12 @@ import org.openqa.selenium.support.PageFactory;
 
 public class TaskPage {
 
-@FindBy(id="TASKS_GRID_ROLE_ID_4096_0_ADVANCED_N_search_container")
-public WebElement square;
+    @FindBy(id="TASKS_GRID_ROLE_ID_4096_0_ADVANCED_N_search_container")
+    public WebElement square;
 
 
-@FindBy(xpath = "(//div[@class='main-ui-item-icon main-ui-square-delete'])[1]")
-public WebElement cleanSubmit;
+    @FindBy(xpath = "(//div[@class='main-ui-item-icon main-ui-square-delete'])[1]")
+    public WebElement cleanSubmit;
 
 
     public TaskPage() {
